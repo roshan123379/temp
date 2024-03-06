@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 
 a {
   font-weight: 500;
@@ -22,36 +26,16 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  
-  min-width: 320px;
-  min-height: 100vh;
-}
+
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
+
 button:hover {
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 
@@ -61,7 +45,430 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   list-style: none;
+  
 }
+
+
+body{
+  background-color: rgba(240, 238, 238, 0.384);
+ 
+}
+
+/* Header CSS */
+.navbar{
+  background-color: rgba(255, 255, 255, 0.905);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 57%;
+  height: 2cm;
+  margin: 0.5cm;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px -2px gray;
+  font-size: 18px;
+  padding: 0 15%;
+  position: fixed;
+  top: 0.5cm;
+  left: 5%;
+  z-index: 1000;
+  
+}
+.navList{
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  align-items: center;
+  
+}
+.logoutNav,.registerNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 100%;
+}
+.navHome,.navService{
+  width: 25%;
+  
+}
+.navChange{
+  width: 50%;
+  
+}
+.home{
+  width: 100%;
+  height: calc(81vh);
+  padding-top: 3.5cm;
+  background-color: rgb(205, 233, 244);
+  display: flex;
+  gap: 1cm;
+}
+.homeDesc{
+  
+  width: 22%;
+margin-top: 2cm;
+  margin-left: 24%;
+
+}
+.desc1{
+  font-weight: bold;
+  font-size: 18px;
+
+}
+.desc2{
+  font-weight: bold;
+  font-size: 38px;
+}
+.bookNow{
+  margin-top: 0.5cm;
+  width: 3cm;
+  height: 1cm;
+  border: none;
+  border-radius: 8px;
+  background-color: #646cff;
+  color: white;
+  font-size: 16px;
+}
+.docImg{
+  filter: drop-shadow(30px 10px 40px #a3a3a7);
+}
+.offersDiv{
+  width: calc(100%-2cm);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1cm;
+  
+  align-items: center;
+}
+.bookNow:hover,.offer1:hover,.offer2:hover,.offer3:hover,.offer4:hover{
+  animation: scale 1s alternate;
+}
+.productList{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: calc(100%-2cm);
+  padding: 1cm;
+  
+}
+/* .productList div{
+  width: 20%;
+  
+  height: 4cm;
+
+} */
+.newCart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: max(6cm,14%);
+  height: 9cm;
+  margin-bottom: 1cm;
+  border-radius: 13px;
+  padding: 2%;
+  gap: 0.5cm;
+  background-color: rgb(237, 237, 237);
+  
+}
+.cartImg{
+  width: 4cm;
+  height: 50%;
+  
+  border-radius: 10px;
+ 
+
+}
+.cartImg img{
+  width: 90%;
+  height: 85%;
+  mix-blend-mode: darken;
+}
+.newName{
+  height: 1.5cm;
+  margin-bottom: 0.2cm;
+}
+.newButton button,.check{
+  margin-top: 0.2cm;
+  height: 1cm;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(96, 96, 234);
+  padding-bottom: 0.2cm;
+  width: 4cm;
+  font-size: 20px;
+  padding-top: 0.2cm;
+  color: white;
+}
+.newButton button:active{
+  background-color: white;
+  color: rgb(96, 96, 234);
+}
+.newDetails{
+  
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: 40%;
+
+}
+
+@keyframes scale {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
+.offer1,.offer2,.offer3,.offer4{
+  width: 20%;
+  display: flex;
+  gap: 0.2cm;
+  height: 2cm;
+  
+  align-items: center;
+}
+.offer1{
+  background-color: rgb(165, 234, 165);
+  border-radius: 15px;
+}
+.offer1 div i{
+  margin: 0.5cm;
+  color:green;
+}
+.offer2{
+  background-color: rgb(234, 234, 165);
+  border-radius: 15px;
+}
+.offer2 div i{
+  margin: 0.5cm;
+  color:rgb(149, 164, 37);
+}
+.offer3{
+  background-color: rgb(234, 174, 165);
+  border-radius: 15px;
+}
+.offer3 div i{
+  margin: 0.5cm;
+  color:rgb(221, 46, 6);
+}
+.offer4{
+  background-color: rgb(234, 165, 213);
+  border-radius: 15px;
+}
+.offer4 div i{
+  margin: 0.5cm;
+  color:rgb(120, 13, 109);
+}
+
+.off{
+  font-size: 20px;
+  font-weight: bold;
+}
+.newProd{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1cm;
+}
+.explore{
+  font-size: 18px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 1cm;
+}
+.newPrice span{
+  color: red;
+}
+.deal{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1cm;
+}
+.deal span{
+  width: 2cm;
+  
+  padding: 0.1cm;
+  border: none;
+  color: red;
+  background-color: rgb(255, 216, 145);
+}
+.mainProductList{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* .medicinePage{
+  
+  
+} */
+.carousalImg{
+  width: 100%;
+  height: 25rem;
+}
+.btn{
+  width: 2cm;
+  color: white;
+  height: 1cm;
+  border-radius: 10px;
+  background-color: rgb(73, 214, 73);
+  border: none;
+  font-size: 16px;
+  
+}
+.poster{
+  padding-top: 4cm;
+  margin-bottom: 1cm;
+  position: relative;
+  display: flex;
+  
+  width: 100%;
+  height: 55vh;
+  background-color: rgb(71, 171, 228);
+}
+
+.doctor3{
+  width: 33%;
+}
+.doctor3 img{
+  margin-top: 1cm;
+  width: 70%;
+  height: 90%;
+  filter: drop-shadow(2px 2px 2px white);
+  
+  
+}
+.doctor2{
+  width: 33%;
+  display: flex;
+  padding-top: 1%;
+  justify-content: center;
+}
+.doctor2 img{
+  width: 50%;
+  height: 60%;
+  filter: drop-shadow(2px 2px 2px white);
+  
+}
+.inputDiv{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 66%;
+  left: 30%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  gap: 0.1cm;
+  height: 1cm;
+  
+ 
+}
+
+.inputDiv input{
+  
+  width: 80%;
+
+  height: 1cm;
+  border: none;
+ border-radius: 5px;
+ font-size: 18px;
+ padding-left: 0.2cm;
+}
+.buy{
+  position: absolute;
+ left: 10%;
+ right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 33px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  top: 75%;
+}
+
+.heart{
+  display: flex;
+  justify-content: center;
+  
+  width: 33%;
+}
+.heart img{
+  filter: drop-shadow(2px 2px 2px white);
+  
+  width: 70%;
+  margin-top: 1.5cm;
+  margin-left: 4cm;
+  height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:412px){
+  .carousalImg{
+    width: 100%;
+    height: 5cm;
+  }
+ 
+}
+@media(max-width:900px){
+  .doctor3,.heart{
+    display: none;
+
+  }
+  .doctor2{
+    width: 100%;
+  }
+  .inputDiv{
+    width: 100%;
+    justify-content: center;
+    left: 0;
+    padding: 0 6%;
+  }
+  
+}
+@media (max-width:412px){
+  .docImg{
+    display: none;
+  }
+  .homeDesc{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .navList{
+    display: none;
+  }
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -73,4 +480,209 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.signup,.login{
+
+  background-color: rgb(18, 150, 238);
+  height: 100vh;
+}
+.formDiv{
+  position: fixed;
+  width: 25%;
+  background-color: white;
+  height: 50%;
+  top: 25%;
+ left: 37.5%;
+ border-radius: 20px;
+}
+.signupHead,.loginHead{
+  font-size: 28px;
+  margin: 25px;
+  font-weight: bold;
+  text-align: center;
+  
+}
+.signupform,.loginForm{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60%;
+
+}
+.signupform input, .loginForm input{
+  width: 7cm;
+  height: 1cm;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding-left: 0.2cm;
+  font-size: 16px;
+  margin-bottom: 0.3cm;
+}
+.signupform button ,.loginForm button{
+  width: 7.2cm;
+  height: 1cm;
+  background-color: rgb(92, 73, 232);
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: white;
+}
+.notmember,.member{
+  text-align: center;
+}
+
+
+.cartPage{
+  background-color: rgb(245, 245, 245);
+  height: 56vh;
+  padding: 10%;
+  display: flex;
+  
+}
+
+
+
+
+.cart{
+  
+
+  border-radius: 20px;
+  width: 65%;
+  height: 70vh;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: auto;
+
+  /* height: 70vh;
+  display: flex;
+
+  
+  justify-content: center;
+  align-content: center; */
+}
+.cartItems{
+  background-color: white;
+  padding-top: 2.2cm;
+  width: 100%;
+}
+.checkPage{
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5cm;
+ 
+}
+.total{
+  font-weight: bold;
+  font-size: 18px;
+}
+.img img{
+  
+  width: 4cm;
+  height: 4cm;
+  margin: 0 0.5cm;
+  background-color: lightgray;
+  
+  border-radius: 20px;
+}
+.desc{
+  
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5cm;
+  align-items: center;
+}
+.button button{
+  width: 4cm;
+  height: 1cm;
+ 
+  background-color: rgb(59, 187, 59);
+  border-radius: 10px;
+}
+.totalQuantity{
+  display: flex;
+  justify-content: space-around;
+  height: 1cm;
+  border: 1px solid gray;
+  align-items: center;
+  width: 3cm;
+}
+.cartHead{
+  display: flex;
+  position: fixed;
+  background-color: white;
+  width:51%;
+  height: 2cm;
+  
+  top: 4.1cm;
+  border-radius: 5px;
+  
+}
+.cartHead div{
+  margin: 0.5cm;
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+.item{
+ font-weight: bold;
+  display: flex;
+  justify-content:space-evenly ;
+  
+ 
+  
+}
+.item div{
+ 
+  text-align: center;
+  height: 1.9cm;
+  
+}
+.item1 img{
+  width: 100%;
+  height: 100%;
+  
+}
+.item1{ 
+  width: 15%;
+  padding-top: 0.4cm;
+  padding-right: 0.2cm;
+
+}
+.item2{
+  padding-top: 0.3cm;
+  width: 25%;
+  
+}
+.item3{
+  width: 20%;
+  padding-top: 0.8cm;
+}
+.item4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding-top: 0.8cm;
+}
+.item4 div{
+  width: 30%;
+}
+.item5{
+  padding-top: 0.8cm;
+  width: 20%;
+}
+.item5 i{
+  color: red;
 }

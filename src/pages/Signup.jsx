@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../../Context/authProvider"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const Signup = () => {
     const {storeToken} = useAuth()
@@ -45,25 +45,29 @@ const Signup = () => {
 
     return (
         <>
-            <div>
-                <h1>Signup form</h1>
-                <form action="" onSubmit={submit}>
+            <div className="signup">
+            <div className="formDiv">
+            <p className="signupHead">Signup form</p>
+                <form action="" className="signupform" onSubmit={submit}>
                     <div>
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username"></label>
                         <input type="text" name="username" id="username" placeholder="Enter Your Name" value={input.username} onChange={inputHandle} required />
                     </div>
                     <div>
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email"></label>
                         <input type="email" name="email" id="email" placeholder="Enter Your Email" value={input.email} onChange={inputHandle} required />
                     </div>
                     <div>
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password"></label>
                         <input type="password" name="password" id="password" placeholder="Enter Your Password" value={input.password} onChange={inputHandle} required />
                     </div>
                     <div>
-                        <button type="submit" >Submit</button>
+                        <button type="submit" >Sign Up</button>
+                        <p className="member">Already a member? <span><NavLink to="/login">login</NavLink></span></p>
                     </div>
                 </form>
+            </div>
+                
             </div>
 
 

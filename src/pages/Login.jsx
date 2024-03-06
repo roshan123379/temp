@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useAuth } from "../../Context/authProvider"
-import {useNavigate} from "react-router-dom"
+import { useNavigate ,NavLink} from "react-router-dom"
 const Login = () => {
-    const {storeToken} = useAuth()
+    const { storeToken } = useAuth()
     const [login, setLogin] = useState({
 
         email: "",
@@ -29,13 +29,13 @@ const Login = () => {
                 body: JSON.stringify(login)
             })
             console.log(response)
-            if(response.ok){
+            if (response.ok) {
                 let res_data = await response.json()
                 console.log(res_data)
                 storeToken(res_data.Token)
                 navigate("/")
             }
-            
+
         } catch (error) {
             console.log("login fetchin eror", error)
         }
@@ -43,22 +43,26 @@ const Login = () => {
 
     return (
         <>
-            <div>
-                <h1>Login form</h1>
-                <form action="" onSubmit={submit}>
+            <div className="login">
+                <div className="formDiv">
+                    <p className="loginHead">Login form</p>
+                    <form action="" className="loginForm" onSubmit={submit}>
 
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Enter Your Email" value={login.email} onChange={inputHandle} />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter Your Password" value={login.password} onChange={inputHandle} />
-                    </div>
-                    <div>
-                        <button type="submit" >Submit</button>
-                    </div>
-                </form>
+                        <div>
+                            <label htmlFor="email"></label>
+                            <input type="email" name="email" id="email" placeholder="Enter Your Email" value={login.email} onChange={inputHandle} />
+                        </div>
+                        <div>
+                            <label htmlFor="password"></label>
+                            <input type="password" name="password" id="password" placeholder="Enter Your Password" value={login.password} onChange={inputHandle} />
+                        </div>
+                        <div>
+                            <button type="submit" >Login</button>
+                            <p className="notmember">Not a member? <span><NavLink to="/signup">Sign up</NavLink></span></p>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
 
